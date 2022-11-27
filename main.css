@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --black-color: #000001;
+    --gray-color: #1C1D1C;
+    --white-color: #FFFFFE;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+}
+
+html{
+    cursor: url('./assets/magic-wand.png'), auto;
+    overflow: hidden;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--black-color);
+    position: relative;
+    color: var(--white-color);
+}
+
+#party-btn{
+    width: max-content;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--black-color);
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    background-color: var(--white-color);
+}
+
+#counter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 60px;
+    font-weight: 600;
+    transform: translate(-50%, -50%);
+    color: var(--white-color);
+}
+
+#group-ballons > img{
+    width: 100%;
+    position: absolute;
+    animation-duration: 3s;
+    animation-name: ballon-flow;
+    bottom: -60%;
+}
+
+@keyframes ballon-flow{
+    from {bottom: -60%;}
+    to {bottom: 100%;}
+}
+
+#banner > img{
+    position: absolute;
+    left: 50%;
+    top: 150%;
+    transform: translate(-50%);
+    animation-name: banner-flow;
+    animation-duration: 23s;
+}
+
+@keyframes banner-flow{
+    0% {top: 150%;}
+    20% {top: 100%;}
+    28% {top: 0%;}
+    95% {top: 0%;}
+    100% {top: -50%;}
+}
+
+#heading{
+    font-size: 70px;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translate(-50%);
+    animation-name: name-anim;
+    animation-duration: 23s;
+}
+
+@keyframes name-anim{
+    0% {top: -50%;}
+    25% {top: -50%}
+    30% {top: 30%}
+    95% {top: 30%}
+    100% {top: -50%}
+}
+
+#cake-container > img{
+    position: absolute;
+    width: 10rem;
+    left: 50%;
+    transform: translate(-50%);
+    top: 150%;
+    animation-name: cake-animation;
+    animation-duration: 23s;
+}
+
+@keyframes cake-animation{
+    0% {top: 150%}
+    30% {top: 100%}
+    35% {top: 50%}
+    95% {top: 50%}
+    100% {top: 150%}
+}
+
+#poper-left > img, #poper-right > img{
+    position: absolute;
+    width: 10rem;
+    top: 30%;
+}
+
+#poper-left > img{
+    left: -50%;
+    animation: poper-left-anim;
+    animation-duration: 23s;
+}
+
+@keyframes poper-left-anim{
+    0% {left: -50%;}
+    35% {left: -50%;}
+    40% {left: 0%;}
+    95% {left: 0%;}
+    100% {left: -50%;}
+}
+
+#poper-right > img{
+    right: -50%;
+    animation: poper-right-anim;
+    animation-duration: 23s;
+}
+
+@keyframes poper-right-anim{
+    0% {right: -50%;}
+    35% {right: -50%;}
+    40% {right: 0%;}
+    95% {right: 0%;}
+    100% {right: -50%;}
+}
+
+#story-text{
+    position: absolute;
+    top: 60%;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    animation-name: story-anim;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes story-anim{
+    0% {opacity: 0; top: 60%;}
+    50% {opacity: 1; top: 40%;}
+    100% {opacity: 1; top: 40%;}
+}
+
+#slide-show-container{
+    width: 80%;
+    height: 80vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#slide{
+    height: 90%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    object-fit: cover;
+    animation-name: slide-anim;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes slide-anim{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#footer{
+    position: absolute;
+    bottom: 1%;
+    width: 100%;
+    text-align: center;
+}
+
+#footer > i {
+    color: red;
+}
+
+@media screen and (max-width: 767px) {
+    #group-ballons > img{
+        width: 100%;
+        left: 0%;
+    }
+
+    #banner > img{
+        width: 100%;
+    }
+
+    #heading{
+        font-size: 30px;
+    }
+
+    #story-text{
+        font-size: medium;
+    }
+    #slide-show-container{
+        top: 10%;
+        transform: translate(-50%, 0%);
+    }
+    
+    #footer{
+        bottom: 10%;
+    }
+}
